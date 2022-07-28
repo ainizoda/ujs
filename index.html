@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Document</title>
+  </head>
+
+  <body>
+    <h1>Current count is <span u-name="count">0</span></h1>
+    <div u-name="count"></div>
+    <div u-if="count > 5">greater than 5</div>
+
+    <button id="increment">+</button>
+    <button id="decrement">-</button>
+  </body>
+
+  <script>
+    let incrememt = document.getElementById("increment"),
+      decrement = document.getElementById("decrement");
+
+    function main() {
+      console.log(this);
+      this.count = 1;
+
+      incrememt.onclick = () => {
+        this.count++;
+      };
+
+      decrement.onclick = () => {
+        if (this.count > 0) {
+          this.count--;
+        }
+      };
+    }
+  </script>
+
+  <script src="./main.js"></script>
+</html>
